@@ -24,7 +24,7 @@ public class TallerSantaMain {
         // Menú de autenticación
         boolean autenticado = false;
         while (!autenticado) { // Bucle hasta que el usuario se autentique correctamente
-            System.out.println("\n=== SISTEMA DE AUTENTICACIÓN ===");
+            System.out.println("\n=== SISTEMA DE AUTENTICACION ===");
             System.out.println("1. Iniciar sesión");
             System.out.println("2. Registrarse");
             System.out.println("3. Salir");
@@ -60,7 +60,7 @@ public class TallerSantaMain {
         // Menú principal
         boolean salir = false;
         while (!salir) { // repetir hasta que el usuario decida salir
-            System.out.println("\n===== TALLER DE SANTA - MENÚ PRINCIPAL =====");
+            System.out.println("\n===== TALLER DE SANTA - MENU PRINCIPAL =====");
             System.out.println("1. Gestión de Regalos");
             System.out.println("2. Gestión de Niños");
             System.out.println("3. Asignación de Regalos");
@@ -107,7 +107,7 @@ public class TallerSantaMain {
                                          Scanner scanner) {
         boolean regresar = false;
         while (!regresar) { // Bucle hasta que el usuario decida regresar al menú principal
-            System.out.println("\n=== GESTIÓN DE REGALOS ===");
+            System.out.println("\n=== GESTION DE REGALOS ===");
             System.out.println("1. Registrar nuevo regalo");
             System.out.println("2. Modificar regalo");
             System.out.println("3. Eliminar regalo");
@@ -150,7 +150,7 @@ public class TallerSantaMain {
                                        Scanner scanner) {
         boolean regresar = false;
         while (!regresar) { // Bucle hasta que el usuario decida regresar al menú principal
-            System.out.println("\n=== GESTIÓN DE NIÑOS ===");
+            System.out.println("\n=== GESTION DE NIÑOS ===");
             System.out.println("1. Registrar nuevo niño");
             System.out.println("2. Modificar datos de niño");
             System.out.println("3. Eliminar registro de niño");
@@ -190,7 +190,7 @@ public class TallerSantaMain {
                                        Scanner scanner) {
         boolean regresar = false; 
         while (!regresar) {
-            System.out.println("\n=== ASIGNACIÓN DE REGALOS ===");
+            System.out.println("\n=== ASIGNACION DE REGALOS ===");
             System.out.println("1. Asignar regalo a niño");
             System.out.println("2. Buscar asignaciones por niño");
             System.out.println("3. Volver al menú principal");
@@ -220,7 +220,7 @@ public class TallerSantaMain {
                                    Scanner scanner) {
         boolean regresar = false;
         while (!regresar) {
-            System.out.println("\n=== GENERACIÓN DE REPORTES ===");
+            System.out.println("\n=== GENERACION DE REPORTES ===");
             System.out.println("1. Inventario actual de regalos");
             System.out.println("2. Listado completo de niños registrados");
             System.out.println("3. Detalle de regalos asignados a cada niño");
