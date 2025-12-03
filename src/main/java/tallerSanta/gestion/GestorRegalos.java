@@ -149,7 +149,7 @@ public class GestorRegalos {
         
         Regalo regalo = buscarRegaloPorCodigo(codigo);
         if (regalo != null) { // Si se encuentra el regalo, mostrar su información
-            System.out.println("\n=== INFORMACIÓN DEL REGALO ===");
+            System.out.println("\n=== INFORMACION DEL REGALO ===");
             System.out.println("Código: " + regalo.getCodigo());
             System.out.println("Nombre: " + regalo.getNombre());
             System.out.println("Descripción: " + regalo.getDescripcion());

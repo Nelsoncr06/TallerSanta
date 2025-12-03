@@ -5,5 +5,26 @@
     "descripcion": "legos armables",
     "marca": "mattel",
     "cantidad": 29
+  },
+  {
+    "codigo": "01",
+    "nombre": "computadora",
+    "descripcion": "tareas",
+    "marca": "lenovo",
+    "cantidad": 39
+  },
+  {
+    "codigo": "02",
+    "nombre": "zapatos",
+    "descripcion": "calzado",
+    "marca": "crocks",
+    "cantidad": 49
+  },
+  {
+    "codigo": "03",
+    "nombre": "celulares",
+    "descripcion": "tablets",
+    "marca": "xiaomi",
+    "cantidad": 7
   }
 ]

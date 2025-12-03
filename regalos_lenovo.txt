@@ -1,0 +1,5 @@
+=== REGALOS DE LA MARCA: LENOVO ===
+==================================================
+Código: 01 | Nombre: computadora | Marca: lenovo | Cantidad: 39
+==================================================
+Reporte generado el: Wed Dec 03 16:41:57 CST 2025

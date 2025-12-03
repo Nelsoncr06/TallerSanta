@@ -6,5 +6,29 @@
     "ciudad": "heredia",
     "direccion": "200 metros sur del hotel",
     "tieneRegalo": true
+  },
+  {
+    "identificacion": "1234567",
+    "nombreCompleto": "panfilo pellionero",
+    "edad": 17,
+    "ciudad": "guapiles",
+    "direccion": "cariari",
+    "tieneRegalo": true
+  },
+  {
+    "identificacion": "02",
+    "nombreCompleto": "marc zucaritas",
+    "edad": 15,
+    "ciudad": "san jose",
+    "direccion": "la cali, 200 metros sur de la estacion de tren",
+    "tieneRegalo": true
+  },
+  {
+    "identificacion": "03",
+    "nombreCompleto": "maria auxiliadora",
+    "edad": 11,
+    "ciudad": "guanacaste",
+    "direccion": "calle el bambu",
+    "tieneRegalo": false
   }
 ]

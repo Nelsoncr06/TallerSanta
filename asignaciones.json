@@ -3,5 +3,15 @@
     "idNino": "01",
     "codigoRegalo": "123",
     "fechaAsignacion": "02/12/2025"
+  },
+  {
+    "idNino": "1234567",
+    "codigoRegalo": "02",
+    "fechaAsignacion": "03/12/2025"
+  },
+  {
+    "idNino": "02",
+    "codigoRegalo": "01",
+    "fechaAsignacion": "03/12/2025"
   }
 ]
