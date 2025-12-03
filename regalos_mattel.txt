@@ -1,0 +1,5 @@
+=== REGALOS DE LA MARCA: MATTEL ===
+==================================================
+Código: 123 | Nombre: juguetes | Marca: mattel | Cantidad: 29
+==================================================
+Reporte generado el: Tue Dec 02 23:43:28 CST 2025

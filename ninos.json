@@ -1,0 +1,10 @@
+[
+  {
+    "identificacion": "01",
+    "nombreCompleto": "juanito de los palotes",
+    "edad": 7,
+    "ciudad": "heredia",
+    "direccion": "200 metros sur del hotel",
+    "tieneRegalo": true
+  }
+]
