@@ -1,5 +1,7 @@
 package tallerSanta.modelos;
 
+// Clase que representa a un niño con sus datos personales y si ha recibido un regalo.
+// Contiene atributos como identificación, nombre completo, edad, ciudad, dirección y un indicador de si tiene regalo asignado.
 public class Nino {
     private String identificacion;
     private String nombreCompleto;
@@ -41,7 +43,7 @@ public class Nino {
     public void setTieneRegalo(boolean tieneRegalo) { this.tieneRegalo = tieneRegalo; }
 
     @Override
-    public String toString() {
+    public String toString() { // Representación en cadena del niño
         return String.format("ID: %s | Nombre: %s | Edad: %d | Ciudad: %s", 
                            identificacion, nombreCompleto, edad, ciudad);
     }

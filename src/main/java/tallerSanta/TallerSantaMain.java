@@ -4,21 +4,26 @@ import tallerSanta.gestion.*;
 import tallerSanta.reportes.GeneradorReportes;
 import java.util.Scanner;
 
+// Clase principal que inicia la aplicación del Taller de Santa.
+// Proporciona un menú interactivo para gestionar regalos, niños, asignaciones y reportes.
+// El flujo de la aplicación incluye autenticación de usuarios antes de acceder al menú principal.
+// El menú principal permite navegar entre diferentes secciones de gestión y generación de reportes.
+// El programa utiliza varios gestores para manejar la lógica de negocio y un generador de reportes para crear informes detallados.
 public class TallerSantaMain {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        System.out.println("🎅 ===========================================");
-        System.out.println("🎅    BIENVENIDO AL TALLER DE SANTA");
-        System.out.println("🎅 ===========================================");
+        System.out.println("===========================================");
+        System.out.println("   BIENVENIDO AL TALLER DE SANTA");
+        System.out.println("===========================================");
         
         // Inicializar gestores
         GestorJSON gestorJSON = new GestorJSON();
-        GestorUsuarios gestorUsuarios = new GestorUsuarios(gestorJSON);
+        GestorUsuarios gestorUsuarios = new GestorUsuarios(gestorJSON); // Gestor de usuarios para autenticación
         
         // Menú de autenticación
         boolean autenticado = false;
-        while (!autenticado) {
+        while (!autenticado) { // Bucle hasta que el usuario se autentique correctamente
             System.out.println("\n=== SISTEMA DE AUTENTICACIÓN ===");
             System.out.println("1. Iniciar sesión");
             System.out.println("2. Registrarse");
@@ -28,7 +33,7 @@ public class TallerSantaMain {
             int opcion = scanner.nextInt();
             scanner.nextLine(); // Limpiar buffer
             
-            switch (opcion) {
+            switch (opcion) { // Manejar opciones de autenticación
                 case 1:
                     autenticado = gestorUsuarios.iniciarSesion();
                     break;
@@ -36,26 +41,26 @@ public class TallerSantaMain {
                     gestorUsuarios.registrarUsuario();
                     break;
                 case 3:
-                    System.out.println("👋 ¡Hasta pronto!");
+                    System.out.println("¡Hasta pronto!");
                     scanner.close();
                     return;
                 default:
-                    System.out.println("❌ Opción no válida.");
+                    System.out.println("Error, Opción no válida.");
             }
         }
         
         // Inicializar el resto de gestores después de la autenticación
-        GestorRegalos gestorRegalos = new GestorRegalos(gestorJSON);
-        GestorNinos gestorNinos = new GestorNinos(gestorJSON);
-        GestorAsignaciones gestorAsignaciones = new GestorAsignaciones(gestorJSON);
-        GeneradorReportes generadorReportes = new GeneradorReportes(
+        GestorRegalos gestorRegalos = new GestorRegalos(gestorJSON); // Gestor de regalos
+        GestorNinos gestorNinos = new GestorNinos(gestorJSON); // Gestor de niños
+        GestorAsignaciones gestorAsignaciones = new GestorAsignaciones(gestorJSON); // Gestor de asignaciones
+        GeneradorReportes generadorReportes = new GeneradorReportes( // generador de reportes
             gestorRegalos, gestorNinos, gestorAsignaciones
-        );
+        ); 
         
         // Menú principal
         boolean salir = false;
-        while (!salir) {
-            System.out.println("\n🎅 ===== TALLER DE SANTA - MENÚ PRINCIPAL =====");
+        while (!salir) { // repetir hasta que el usuario decida salir
+            System.out.println("\n===== TALLER DE SANTA - MENÚ PRINCIPAL =====");
             System.out.println("1. Gestión de Regalos");
             System.out.println("2. Gestión de Niños");
             System.out.println("3. Asignación de Regalos");
@@ -68,7 +73,7 @@ public class TallerSantaMain {
                 scanner.nextLine(); // Limpiar buffer
                 
                 switch (opcionPrincipal) {
-                    case 1:
+                    case 1: 
                         menuGestionRegalos(gestorRegalos, gestorAsignaciones, scanner);
                         break;
                     case 2:
@@ -82,13 +87,13 @@ public class TallerSantaMain {
                         break;
                     case 5:
                         salir = true;
-                        System.out.println("🎅 ¡Gracias por usar el Taller de Santa!");
+                        System.out.println("¡Gracias por utilizar el Taller de Santa!");
                         break;
                     default:
-                        System.out.println("❌ Opción no válida.");
+                        System.out.println("Error, Opción no válida.");
                 }
-            } catch (Exception e) {
-                System.out.println("❌ Error: " + e.getMessage());
+            } catch (Exception e) { // Manejar errores de entrada
+                System.out.println("Error: " + e.getMessage());
                 scanner.nextLine(); // Limpiar buffer en caso de error
             }
         }
@@ -96,12 +101,13 @@ public class TallerSantaMain {
         scanner.close();
     }
     
+    // Menús específicos para cada sección de la aplicación, delegando las operaciones a los gestores correspondientes.
     private static void menuGestionRegalos(GestorRegalos gestorRegalos, 
                                          GestorAsignaciones gestorAsignaciones,
                                          Scanner scanner) {
         boolean regresar = false;
-        while (!regresar) {
-            System.out.println("\n📦 === GESTIÓN DE REGALOS ===");
+        while (!regresar) { // Bucle hasta que el usuario decida regresar al menú principal
+            System.out.println("\n=== GESTIÓN DE REGALOS ===");
             System.out.println("1. Registrar nuevo regalo");
             System.out.println("2. Modificar regalo");
             System.out.println("3. Eliminar regalo");
@@ -133,17 +139,18 @@ public class TallerSantaMain {
                     regresar = true;
                     break;
                 default:
-                    System.out.println("❌ Opción no válida.");
+                    System.out.println("Error, Opción no válida.");
             }
         }
     }
     
+    // Menú para la gestión de niños, con opciones para registrar, modificar, eliminar y consultar niños.
     private static void menuGestionNinos(GestorNinos gestorNinos,
                                        GestorAsignaciones gestorAsignaciones,
                                        Scanner scanner) {
         boolean regresar = false;
-        while (!regresar) {
-            System.out.println("\n👦 === GESTIÓN DE NIÑOS ===");
+        while (!regresar) { // Bucle hasta que el usuario decida regresar al menú principal
+            System.out.println("\n=== GESTIÓN DE NIÑOS ===");
             System.out.println("1. Registrar nuevo niño");
             System.out.println("2. Modificar datos de niño");
             System.out.println("3. Eliminar registro de niño");
@@ -171,18 +178,19 @@ public class TallerSantaMain {
                     regresar = true;
                     break;
                 default:
-                    System.out.println("❌ Opción no válida.");
+                    System.out.println("Error, Opción no válida.");
             }
         }
     }
     
+    // Menú para la asignación de regalos a niños, con opciones para asignar regalos y buscar asignaciones.
     private static void menuAsignaciones(GestorRegalos gestorRegalos,
                                        GestorNinos gestorNinos,
                                        GestorAsignaciones gestorAsignaciones,
                                        Scanner scanner) {
-        boolean regresar = false;
+        boolean regresar = false; 
         while (!regresar) {
-            System.out.println("\n🎁 === ASIGNACIÓN DE REGALOS ===");
+            System.out.println("\n=== ASIGNACIÓN DE REGALOS ===");
             System.out.println("1. Asignar regalo a niño");
             System.out.println("2. Buscar asignaciones por niño");
             System.out.println("3. Volver al menú principal");
@@ -202,21 +210,22 @@ public class TallerSantaMain {
                     regresar = true;
                     break;
                 default:
-                    System.out.println("❌ Opción no válida.");
+                    System.out.println("Error, Opción no válida.");
             }
         }
     }
     
+    // Menú para la generación de reportes, permitiendo al usuario seleccionar diferentes tipos de informes.
     private static void menuReportes(GeneradorReportes generadorReportes,
                                    Scanner scanner) {
         boolean regresar = false;
         while (!regresar) {
-            System.out.println("\n📊 === GENERACIÓN DE REPORTES ===");
+            System.out.println("\n=== GENERACIÓN DE REPORTES ===");
             System.out.println("1. Inventario actual de regalos");
             System.out.println("2. Listado completo de niños registrados");
             System.out.println("3. Detalle de regalos asignados a cada niño");
             System.out.println("4. Listado de niños sin regalo asignado");
-            System.out.println("5. Regalos por marca (guardar en archivo)");
+            System.out.println("5. Regalos por marca (guardar en archivo de texto)");
             System.out.println("6. Volver al menú principal");
             System.out.print("Seleccione una opción: ");
             
@@ -243,7 +252,7 @@ public class TallerSantaMain {
                     regresar = true;
                     break;
                 default:
-                    System.out.println("❌ Opción no válida.");
+                    System.out.println("Error,  Opción no válida.");
             }
         }
     }

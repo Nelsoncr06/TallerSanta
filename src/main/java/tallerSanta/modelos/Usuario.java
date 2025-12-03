@@ -1,5 +1,7 @@
 package tallerSanta.modelos;
 
+// Clase que representa un usuario con nombre de usuario y contraseña.
+// Contiene getters y setters para cada atributo, así como un método toString para representar el usuario en formato de cadena.
 public class Usuario {
     private String username;
     private String password;
@@ -19,7 +21,7 @@ public class Usuario {
     public void setPassword(String password) { this.password = password; }
 
     @Override
-    public String toString() {
+    public String toString() { // Representación en cadena del usuario
         return "Usuario: " + username;
     }
 }

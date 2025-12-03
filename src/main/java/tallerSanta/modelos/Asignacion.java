@@ -1,5 +1,7 @@
 package tallerSanta.modelos;
 
+// Clase que representa la asignación de un regalo a un niño, incluyendo la identificación del niño, el código del regalo y la fecha de asignación.
+// setters y getters para cada atributo, así como un método toString para representar la asignación en formato de cadena.
 public class Asignacion {
     private String idNino;
     private String codigoRegalo;
